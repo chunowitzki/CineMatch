@@ -1,5 +1,23 @@
 
-@import url('https://googleapis.com');
+
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,400&family=Courier+Prime:wght@400;700&display=swap");
+
+
+
+@import "tailwindcss";
+
+@theme {
+  --color-reel-bg: #1b1a19;
+  --color-reel-cream: #eeebe3;
+  --color-reel-ink: #151413;
+  --color-reel-muted: #a8a49c;
+  --color-reel-line: #3a3836;
+  --color-reel-red: #c4564b;
+
+  --font-serif: "Bodoni Moda", Georgia, serif;
+  --font-mono: "Courier Prime", "Courier New", monospace;
+}
 
 
 body {
@@ -9,11 +27,27 @@ body {
   background-color: #0c0909;
   border: #E09F3E 1px solid;
   border-radius: 10px;
-  padding: 2rem 2rem
+  padding: 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; 
 }
 
 .font-playfair {
   font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+.title {
+  font-size: 5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.subTitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
 }
 
 .font-newsreader {
@@ -39,3 +73,9 @@ body {
 button {
   border: none;
 }
+
+.startBtn { 
+  padding: 1rem 2rem;
+  font-family: 'Playfair Display', serif;
+}
+
