@@ -38,7 +38,7 @@ const Genres = ({ selectedGenres, setSelectedGenres }: GenresProps) => {
         </h2>
         <div className="mt-7 grid grid-cols-2 gap-3">
             {genres.map((genre) => (
-                <OptionCard key={genre.id} title={genre.title} blurb={genre.blurb} id={genre.id} handleClick={()=> handleOptionClick(genre.id)}/>
+                <OptionCard key={genre.id} isClicked={selectedGenres.includes(genre.id)} title={genre.title} blurb={genre.blurb} id={genre.id} handleClick={()=> handleOptionClick(genre.id)}/>
             ))}
         </div>
         </div>

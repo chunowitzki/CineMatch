@@ -14,6 +14,8 @@
   --color-reel-muted: #a8a49c;
   --color-reel-line: #3a3836;
   --color-reel-red: #c4564b;
+  --color-reel-gold: #e09f3e;
+  --font-sans: "Newsreader", "Playfair Display", Georgia, serif;
 
   --font-serif: "Bodoni Moda", Georgia, serif;
   --font-mono: "Courier Prime", "Courier New", monospace;
@@ -70,9 +72,6 @@ body {
   background-color: #BA3B46;
 }
 
-button {
-  border: none;
-}
 
 .startBtn { 
   padding: 1rem 2rem;

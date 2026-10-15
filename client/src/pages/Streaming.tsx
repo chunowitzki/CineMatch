@@ -13,11 +13,13 @@ const Streaming = ({ selectedStreaming, setSelectedStreaming }: StreamingProps) 
     function handleOptionClick(id: string) {
         if (selectedStreaming.includes(id)) {
             setSelectedStreaming(selectedStreaming.filter((streamingId) => streamingId !== id));
+            console.log(selectedStreaming)
         } else {
             setSelectedStreaming([...selectedStreaming, id]);
+            console.log(selectedStreaming)
         }
 
-        console.log(selectedStreaming)
+        
     }
 
     
@@ -40,7 +42,7 @@ const Streaming = ({ selectedStreaming, setSelectedStreaming }: StreamingProps) 
         </h2>
         <div className="mt-7 grid grid-cols-2 gap-3">
             {streamingServices.map((a) => (
-                <OptionCard key={a.id} title={a.title} blurb={a.blurb} id={a.id} handleClick={() => handleOptionClick(a.id)} />
+                <OptionCard key={a.id} isClicked={selectedStreaming.includes(a.id)} title={a.title} blurb={a.blurb} id={a.id} handleClick={() => handleOptionClick(a.id)} />
             ))}
         </div>
         </div>

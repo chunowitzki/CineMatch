@@ -11,7 +11,7 @@ import Streaming from './pages/Streaming.tsx'
 function App() {
   const [selectedFeeling, setSelectedFeeling] = useState<string[]>([]);
   const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
-  const [selectedAttendance, setSelectedAttendance] = useState(null)
+  const [selectedAttendance, setSelectedAttendance] = useState<string[]>([]);
   const [selectedStreaming, setSelectedStreaming] = useState<string[]>([]);
 
   return (

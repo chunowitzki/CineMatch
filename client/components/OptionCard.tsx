@@ -1,11 +1,20 @@
 import React from 'react'
 
-const OptionCard = ({ title, blurb, id, handleClick }: { title: string; blurb: string; id: string; handleClick: (id: string) => void }) => {
+const OptionCard = ({ title, blurb, id, isClicked, handleClick }: { title: string; blurb: string; id: string; isClicked: boolean; handleClick: (id: string) => void }) => {
   return (
-    <div className="flex min-h-[92px] flex-col justify-between rounded-[2px] border p-4 text-left text-reel-cream" id={id} onClick={() => handleClick(id)}>
-      <h1>{title}</h1>
-      <p>{blurb}</p>
-    </div>
+     <button
+    type="button"
+    aria-pressed={isClicked}
+    onClick={() => handleClick(id)}
+    className={`flex min-h-23 cursor-pointer flex-col justify-between rounded-[5px] border p-4 text-left min-w-0 ${
+    isClicked
+    ? "border-reel-gold bg-reel-gold text-reel-ink"
+    : "border-reel-cream text-reel-cream"
+    }`}
+  >
+    <span className="font-serif text-[20px]/tight">{title}</span>
+    <span className="mt-1 font-mono text-[11px]/snug">{blurb}</span>
+  </button>
   )
 }
 
