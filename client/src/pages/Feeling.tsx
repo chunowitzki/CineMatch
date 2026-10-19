@@ -6,6 +6,7 @@ import Header from '../../components/Header';
 type FeelingProps = {
   selectedFeeling: string[];
   setSelectedFeeling: Dispatch<SetStateAction<string[]>>;
+  handleNext: () => void;
 };
 const MOODS = [
   { id: "restless", title: "Restless", blurb: "Need a pulse." },
@@ -15,11 +16,11 @@ const MOODS = [
   { id: "lighthearted", title: "Lighthearted", blurb: "Wisecracks welcome." },
   { id: "contemplative", title: "Contemplative", blurb: "Something to chew on." },
   { id: "thrilled", title: "Thrilled", blurb: "Edge of the seat." },
-  { id: "nostalgic", title: "Nostalgic", blurb: "Old reels, warm hiss." },
+  { id: "nostalgic", title: "Nostalgic", blurb: "Old feels, warm hiss." },
 ];
 
 
-const Feeling = ({ selectedFeeling, setSelectedFeeling }: FeelingProps) => {
+const Feeling = ({ selectedFeeling, setSelectedFeeling, handleNext }: FeelingProps) => {
     
        function handleOptionClick(id: string) {
        
@@ -49,7 +50,7 @@ const Feeling = ({ selectedFeeling, setSelectedFeeling }: FeelingProps) => {
             ))}
         </div>
         </div>
-        <NextButton />
+        <NextButton handleNext={handleNext}/>
 
     </div>
   )

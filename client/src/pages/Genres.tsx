@@ -6,8 +6,9 @@ import NextButton from '../../components/NextButton';
 type GenresProps = {
   selectedGenres: string[];
   setSelectedGenres: Dispatch<SetStateAction<string[]>>;
+  handleNext: () => void;
 };
-const Genres = ({ selectedGenres, setSelectedGenres }: GenresProps) => {
+const Genres = ({ selectedGenres, setSelectedGenres, handleNext }: GenresProps) => {
     const genres = [
         { id: "action", title: "Action", blurb: "Explosions and adrenaline." },
         { id: "comedy", title: "Comedy", blurb: "Laughs and lightheartedness." },
@@ -42,7 +43,7 @@ const Genres = ({ selectedGenres, setSelectedGenres }: GenresProps) => {
             ))}
         </div>
         </div>
-        <NextButton />
+        <NextButton handleNext={handleNext}/>
 
     </div>
   )

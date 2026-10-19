@@ -6,9 +6,10 @@ import OptionCard from '../../components/OptionCard'
 type StreamingProps = {
   selectedStreaming: string[];
   setSelectedStreaming: Dispatch<SetStateAction<string[]>>;
+    handleNext: () => void;
 };
 
-const Streaming = ({ selectedStreaming, setSelectedStreaming }: StreamingProps) => {
+const Streaming = ({ selectedStreaming, setSelectedStreaming, handleNext }: StreamingProps) => {
 
     function handleOptionClick(id: string) {
         if (selectedStreaming.includes(id)) {
@@ -46,7 +47,7 @@ const Streaming = ({ selectedStreaming, setSelectedStreaming }: StreamingProps) 
             ))}
         </div>
         </div>
-        <NextButton />
+        <NextButton handleNext={handleNext}/>
 
     </div>
   )

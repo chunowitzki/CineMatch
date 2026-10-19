@@ -10,7 +10,7 @@ import NextButton from '../../components/NextButton'
         { id: "family", title: "Family", blurb: "Fun for all ages." },
     ];
 
-const Attendance = ({ selectedAttendance, setSelectedAttendance }: { selectedAttendance: string[]; setSelectedAttendance: React.Dispatch<React.SetStateAction<string[]>> }) => {
+const Attendance = ({ selectedAttendance, setSelectedAttendance, handleNext }: { selectedAttendance: string[]; setSelectedAttendance: React.Dispatch<React.SetStateAction<string[]>>; handleNext: () => void }) => {
    
 
     function handleOptionClick(id: string) {
@@ -38,7 +38,7 @@ const Attendance = ({ selectedAttendance, setSelectedAttendance }: { selectedAtt
             ))}
         </div>
         </div>
-        <NextButton />
+        <NextButton handleNext={handleNext}/>
 
     </div>
   )
