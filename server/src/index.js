@@ -1,6 +1,9 @@
-const express = require("express");
-const cors = require("cors");
-require("dotenv").config();
+import OpenAI from 'openai';
+import cors from "cors";
+import express from 'express';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -10,6 +13,10 @@ app.use(express.json());
 
 app.get("/api/health", (req, res) => {
   res.json({ message: "Server is running!" });
+});
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 app.listen(PORT, () => {
