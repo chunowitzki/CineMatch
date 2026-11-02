@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import MovieCard from '../../components/MovieCard';
 
 type Props = {
   recommendations: any[];
@@ -19,16 +20,13 @@ export default function Results({ recommendations, loading, error }: Props) {
     );
   }
 
+  console.log('Recommendations:', recommendations); // Log the recommendations to the console
+
   return (
     <div>
       <h1>Your Recommendations</h1>
       {recommendations.map((rec) => (
-        <div key={rec.title}>
-          <h2>{rec.title}</h2>
-          <p><em>{rec.tagline}</em></p>
-          <p>{rec.description}</p>
-          <p>Watch on: {rec.platform}</p>
-        </div>
+        <MovieCard key={rec.id} title={rec.title} description={rec.overview} platform={rec.platform} year={rec.year} image={rec.posterUrl} />
       ))}
       <Link to="/">Start over</Link>
     </div>
