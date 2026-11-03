@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;1,400&family=Courier+Prime:wght@400;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&family=Limelight&display=swap');
 
 
 @import "tailwindcss";
@@ -18,7 +18,7 @@
   --color-reel-gold-dim: #8a7442;
 
   --font-sans: "Newsreader", "Playfair Display", Georgia, serif;
-
+  --font-heading: "Barlow Condensed", "Limelight", sans-serif;
   --font-serif: "Bodoni Moda", Georgia, serif;
   --font-mono: "Courier Prime", "Courier New", monospace;
 }
