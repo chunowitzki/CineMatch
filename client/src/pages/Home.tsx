@@ -2,8 +2,8 @@ import React, { JSX } from 'react'
 
 const Home = ({ handleNext }: { handleNext: () => void }): JSX.Element => {
   return (
-    <main className="flex min-h-dvh flex-col bg-[#3D0B17] px-5 pb-6 pt-10">
-  <h1 className="text-center font-['Limelight'] text-[clamp(2.75rem,14vw,4.5rem)] leading-none text-[#FFC94D]">
+    <main className="flex flex-1 w-full flex-col px-5 pb-20 pt-15">
+  <h1 className="text-center font-['Limelight'] text-[clamp(2.75rem,14vw,4.0rem)] leading-none text-[#FFC94D]">
     CineMatch
   </h1>
 

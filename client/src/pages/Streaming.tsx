@@ -35,17 +35,17 @@ const Streaming = ({ selectedStreaming, setSelectedStreaming, handleNext }: Stre
         { id: "paramount", title: "Paramount+", blurb: "Movies, shows, and live TV." },
     ];
   return (
-    <div className="flex h-dvh flex-col bg-reel-bg">
+    <div className="flex flex-1 flex-col">
         <div className="flex-1 overflow-y-auto px-6 pt-14">
-        <Header />
-        <h2 className="mt-3 font-serif text-[38px]/[1.05] tracking-tight text-reel-cream">
-            Who is watching with you tonight?
-        </h2>
-        <div className="mt-7 grid grid-cols-2 gap-3">
-            {streamingServices.map((a) => (
-                <OptionCard key={a.id} isClicked={selectedStreaming.includes(a.id)} title={a.title} blurb={a.blurb} id={a.id} handleClick={() => handleOptionClick(a.id)} />
-            ))}
-        </div>
+            <Header />
+            <h2 className="mt-3 font-serif text-[38px]/[1.05] tracking-tight text-reel-cream">
+                Pick a streaming service 
+            </h2>
+            <div className="mt-7 grid grid-cols-2 gap-3">
+                {streamingServices.map((a) => (
+                    <OptionCard key={a.id} isClicked={selectedStreaming.includes(a.id)} title={a.title} blurb={a.blurb} id={a.id} handleClick={() => handleOptionClick(a.id)} />
+                ))}
+            </div>
         </div>
         <NextButton handleNext={handleNext}/>
 

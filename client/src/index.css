@@ -16,6 +16,7 @@
   --color-reel-red: #c4564b;
   --color-reel-gold: #e0c068;
   --color-reel-gold-dim: #8a7442;
+  --color-reel-bgRed: #3D0B17;
 
   --font-sans: "Newsreader", "Playfair Display", Georgia, serif;
   --font-heading: "Barlow Condensed", "Limelight", sans-serif;
@@ -23,18 +24,29 @@
   --font-mono: "Courier Prime", "Courier New", monospace;
 }
 
+html {
+  background-color: #1a0a0d;  /* or any dark color you like */
+}
 
 body {
   width: 	440px;
-  height: 956px;
+  height: 930px;
   margin: 0 auto;
-  background-color: #0c0909;
+  box-sizing: border-box; 
   border: #E09F3E 1px solid;
-  border-radius: 10px;
-  padding: 2rem 2rem;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around; 
+  overflow: hidden;         /* clips main's red background to the rounded corners */
+  padding: 0;   
+}
+
+#root {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: var(--color-reel-bgRed);
 }
 
 .font-playfair {
