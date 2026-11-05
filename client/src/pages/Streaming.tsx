@@ -7,9 +7,10 @@ type StreamingProps = {
   selectedStreaming: string[];
   setSelectedStreaming: Dispatch<SetStateAction<string[]>>;
     handleNext: () => void;
+    handleBack: () => void;
 };
 
-const Streaming = ({ selectedStreaming, setSelectedStreaming, handleNext }: StreamingProps) => {
+const Streaming = ({ selectedStreaming, setSelectedStreaming, handleNext, handleBack }: StreamingProps) => {
 
     function handleOptionClick(id: string) {
         if (selectedStreaming.includes(id)) {
@@ -37,7 +38,7 @@ const Streaming = ({ selectedStreaming, setSelectedStreaming, handleNext }: Stre
   return (
     <div className="flex flex-1 flex-col">
         <div className="flex-1 overflow-y-auto px-6 pt-14">
-            <Header />
+            <Header handleBack={handleBack}/>
             <h2 className="mt-3 font-serif text-[38px]/[1.05] tracking-tight text-reel-cream">
                 Pick a streaming service 
             </h2>

@@ -7,8 +7,9 @@ type GenresProps = {
   selectedGenres: string[];
   setSelectedGenres: Dispatch<SetStateAction<string[]>>;
   handleNext: () => void;
+  handleBack: () => void;
 };
-const Genres = ({ selectedGenres, setSelectedGenres, handleNext }: GenresProps) => {
+const Genres = ({ selectedGenres, setSelectedGenres, handleNext, handleBack }: GenresProps) => {
     const genres = [
         { id: "action", title: "Action", blurb: "Explosions and adrenaline." },
         { id: "comedy", title: "Comedy", blurb: "Laughs and lightheartedness." },
@@ -33,7 +34,7 @@ const Genres = ({ selectedGenres, setSelectedGenres, handleNext }: GenresProps) 
   return (
     <div className="flex flex-1 flex-col">
         <div className="flex-1 overflow-y-auto px-6 pt-14">
-        <Header />
+        <Header handleBack={handleBack}/>
         <h2 className="mt-3 font-serif text-[38px]/[1.05] tracking-tight text-reel-cream">
             What kind of vibe are you in the mood for tonight?
         </h2>

@@ -21,6 +21,13 @@ function App() {
   const navigate = useNavigate();
   const { pathname } = useLocation();
 
+  async function handleBack() {
+    const currentIndex = steps.indexOf(pathname);
+    if (currentIndex > 0) {
+      navigate(steps[currentIndex - 1]);
+    }
+  }
+
   async function handleNext() {
     const currentIndex = steps.indexOf(pathname);
     if (currentIndex < steps.length - 1) {
@@ -59,10 +66,10 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home handleNext={handleNext} />} />
-      <Route path="/feeling" element={<Feeling selectedFeeling={selectedFeeling} setSelectedFeeling={setSelectedFeeling} handleNext={handleNext} />} />
-      <Route path="/genres" element={<Genres selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres} handleNext={handleNext} />} />
-      <Route path="/attendance" element={<Attendance selectedAttendance={selectedAttendance} setSelectedAttendance={setSelectedAttendance} handleNext={handleNext} />} />
-      <Route path="/streaming" element={<Streaming selectedStreaming={selectedStreaming} setSelectedStreaming={setSelectedStreaming} handleNext={handleNext} />} />
+      <Route path="/feeling" element={<Feeling selectedFeeling={selectedFeeling} setSelectedFeeling={setSelectedFeeling} handleNext={handleNext} handleBack={handleBack}/>} />
+      <Route path="/genres" element={<Genres selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres} handleNext={handleNext} handleBack={handleBack}/>} />
+      <Route path="/attendance" element={<Attendance selectedAttendance={selectedAttendance} setSelectedAttendance={setSelectedAttendance} handleNext={handleNext} handleBack={handleBack}/>} />
+      <Route path="/streaming" element={<Streaming selectedStreaming={selectedStreaming} setSelectedStreaming={setSelectedStreaming} handleNext={handleNext} handleBack={handleBack}/>} />
       <Route path="/results" element={<Results recommendations={recommendations} loading={loading} error={error} />} />
     </Routes>
   )

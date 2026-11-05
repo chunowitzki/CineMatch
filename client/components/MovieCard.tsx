@@ -6,8 +6,9 @@ type MovieCardProps = {
   platform: string;
   year: string;
   image: string;
+ 
 };
-const MovieCard = ({ title, description, platform, year, image }: MovieCardProps) => {
+const MovieCard = ({ title, description, platform, year, image,  }: MovieCardProps) => {
   return (
     <div className="border border-reel-gold bg-panel">
         <div className='relative h-[300px] overflow-hidden bg-reel-'>
@@ -25,23 +26,7 @@ const MovieCard = ({ title, description, platform, year, image }: MovieCardProps
             
         </div>
 
-        <div className="mt-4 flex items-start justify-center gap-7">
-  <button type="button" className="group flex flex-col items-center gap-2">
-    <span className="flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-reel-red text-2xl text-reel-red transition group-hover:bg-gold/10 group-active:scale-95">
-      ✕
-    </span>
-    <span className="text-[11px] tracking-[0.2em] text-reel-muted">PASS</span>
-  </button>
-
-
-
-  <button type="button" className="group flex flex-col items-center gap-2">
-    <span className="flex h-[68px] w-[68px] items-center justify-center rounded-full bg-reel-gold text-2xl text-reel-line shadow-glow transition group-hover:brightness-110 group-active:scale-95">
-      ♡
-    </span>
-    <span className="text-[11px] tracking-[0.2em] text-reel-muted">SAVE</span>
-  </button>
-</div>
+        
     </div>
   )
 }

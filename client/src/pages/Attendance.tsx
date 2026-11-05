@@ -10,7 +10,7 @@ import NextButton from '../../components/NextButton'
         { id: "family", title: "Family", blurb: "Fun for all ages." },
     ];
 
-const Attendance = ({ selectedAttendance, setSelectedAttendance, handleNext }: { selectedAttendance: string[]; setSelectedAttendance: React.Dispatch<React.SetStateAction<string[]>>; handleNext: () => void }) => {
+const Attendance = ({ selectedAttendance, setSelectedAttendance, handleNext, handleBack }: { selectedAttendance: string[]; setSelectedAttendance: React.Dispatch<React.SetStateAction<string[]>>; handleNext: () => void; handleBack: () => void }) => {
    
 
     function handleOptionClick(id: string) {
@@ -28,7 +28,7 @@ const Attendance = ({ selectedAttendance, setSelectedAttendance, handleNext }: {
   return (
     <div className="flex h-dvh flex-col">
         <div className="flex-1 overflow-y-auto px-6 pt-14">
-        <Header />
+        <Header handleBack={handleBack}/>
         <h2 className="mt-3 font-serif text-[38px]/[1.05] tracking-tight text-reel-cream">
             Who is watching with you tonight?
         </h2>

@@ -7,6 +7,8 @@ type FeelingProps = {
   selectedFeeling: string[];
   setSelectedFeeling: Dispatch<SetStateAction<string[]>>;
   handleNext: () => void;
+  handleBack: () => void;
+
 };
 const MOODS = [
   { id: "restless", title: "Restless", blurb: "Need a pulse." },
@@ -20,7 +22,7 @@ const MOODS = [
 ];
 
 
-const Feeling = ({ selectedFeeling, setSelectedFeeling, handleNext }: FeelingProps) => {
+const Feeling = ({ selectedFeeling, setSelectedFeeling, handleNext, handleBack }: FeelingProps) => {
     
        function handleOptionClick(id: string) {
        
@@ -40,7 +42,7 @@ const Feeling = ({ selectedFeeling, setSelectedFeeling, handleNext }: FeelingPro
   return (
     <div className="flex h-dvh flex-col ">
         <div className="flex-1 overflow-y-auto px-6 pt-14">
-        <Header />
+        <Header handleBack={handleBack}/>
         <h2 className="mt-3 font-serif text-[38px]/[1.05] tracking-tight text-reel-cream">
             How are you feeling tonight?
         </h2>
