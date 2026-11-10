@@ -6,6 +6,7 @@ import Genres from './pages/Genres.tsx'
 import Attendance from './pages/Attendance.tsx'
 import Streaming from './pages/Streaming.tsx'
 import Results from './pages/Results.tsx'
+import Loading from '../components/Loading.tsx'
 
 const steps = ["/", "/feeling", "/genres", "/attendance", "/streaming"];
 
@@ -36,6 +37,7 @@ function App() {
     }
 
     setLoading(true);
+    
     setError(null);
 
     try {
@@ -62,6 +64,9 @@ function App() {
       setLoading(false);
     }
   }
+  if (loading) {
+      return <Loading />
+    };
 
   return (
     <Routes>
@@ -70,7 +75,8 @@ function App() {
       <Route path="/genres" element={<Genres selectedGenres={selectedGenres} setSelectedGenres={setSelectedGenres} handleNext={handleNext} handleBack={handleBack}/>} />
       <Route path="/attendance" element={<Attendance selectedAttendance={selectedAttendance} setSelectedAttendance={setSelectedAttendance} handleNext={handleNext} handleBack={handleBack}/>} />
       <Route path="/streaming" element={<Streaming selectedStreaming={selectedStreaming} setSelectedStreaming={setSelectedStreaming} handleNext={handleNext} handleBack={handleBack}/>} />
-      <Route path="/results" element={<Results recommendations={recommendations} loading={loading} error={error} />} />
+      <Route path="/loading" element={<Loading />} />
+      <Route path="/results" element={<Results recommendations={recommendations} loading={loading} error={error} setSelectedStreaming={setSelectedStreaming} setSelectedGenres={setSelectedGenres} setSelectedAttendance={setSelectedAttendance} setSelectedFeeling={setSelectedFeeling} setRecommendations={setRecommendations} />} />
     </Routes>
   )
 }
