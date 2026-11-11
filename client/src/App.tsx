@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { useLocation, useNavigate, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home.tsx'
-import Feeling from './pages/Feeling.tsx'
-import Genres from './pages/Genres.tsx'
-import Attendance from './pages/Attendance.tsx'
-import Streaming from './pages/Streaming.tsx'
-import Results from './pages/Results.tsx'
-import Loading from '../components/Loading.tsx'
+import Home from './pages/Home'
+import Feeling from './pages/Feeling'
+import Genres from './pages/Genres'
+import Attendance from './pages/Attendance'
+import Streaming from './pages/Streaming'
+import Results from './pages/Results'
+import Loading from '../components/Loading'
+
+const baseUrl = import.meta.env.VITE_API_BASE_URL
 
 const steps = ["/", "/feeling", "/genres", "/attendance", "/streaming"];
 
@@ -25,14 +27,14 @@ function App() {
   async function handleBack() {
     const currentIndex = steps.indexOf(pathname);
     if (currentIndex > 0) {
-      navigate(steps[currentIndex - 1]);
+      navigate(steps[currentIndex - 1]!);
     }
   }
 
   async function handleNext() {
     const currentIndex = steps.indexOf(pathname);
     if (currentIndex < steps.length - 1) {
-      navigate(steps[currentIndex + 1]);
+      navigate(steps[currentIndex + 1]!);
       return;
     }
 
@@ -41,7 +43,7 @@ function App() {
     setError(null);
 
     try {
-      const res = await fetch('http://localhost:5001/api/submit', {
+      const res = await fetch(`${baseUrl}/api/submit`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
