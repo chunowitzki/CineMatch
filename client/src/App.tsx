@@ -8,7 +8,7 @@ import Streaming from './pages/Streaming'
 import Results from './pages/Results'
 import Loading from '../components/Loading'
 
-const baseUrl = import.meta.env.VITE_API_BASE_URL
+const baseUrl = import.meta.env.VITE_API_URL
 
 const steps = ["/", "/feeling", "/genres", "/attendance", "/streaming"];
 
