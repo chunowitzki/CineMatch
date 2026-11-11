@@ -12,7 +12,7 @@ const Header = ({ handleBack }: { handleBack: () => void }): JSX.Element => {
       Back
     </button>
    
-    <h1 className='text-reel-gold font-playfair text-4xl ml-10 leading-none' >CineMatch</h1>
+    <h1 className='text-reel-gold font-playfair text-3xl sm:text-4xl ml-6 sm:ml-10 leading-none' >CineMatch</h1>
     </div>
   )
 }

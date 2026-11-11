@@ -12,7 +12,7 @@ const OptionCard = ({ title, blurb, id, isClicked, handleClick }: { title: strin
     : "border-reel-cream text-reel-cream"
     }`}
   >
-    <span className="font-serif text-[20px]/tight">{title}</span>
+    <span className="font-serif text-[clamp(1rem,4.6vw,1.25rem)]/tight break-words">{title}</span>
     <span className="mt-1 font-mono text-[11px]/snug">{blurb}</span>
   </button>
   )

@@ -29,8 +29,8 @@ const Loading = ({}) => {
         
   return (
     <div className='flex flex-col items-center justify-content gap-4 p-6'>
-        <h1 className="mt-3 font-serif text-[38px]/[1.05] tracking-tight text-reel-cream">LOADING...</h1>
-        <img src={images[index]} alt="Loading" className='w-100 h-100 rounded-2xl shadow-lg object-cover'/>
+        <h1 className="mt-3 font-serif text-[clamp(1.75rem,9vw,2.375rem)]/[1.05] tracking-tight text-reel-cream">LOADING...</h1>
+        <img src={images[index]} alt="Loading" className='w-full max-w-100 aspect-square rounded-2xl shadow-lg object-cover'/>
     </div>
   )
 }

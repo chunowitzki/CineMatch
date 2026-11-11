@@ -28,25 +28,49 @@ html {
   background-color: #1a0a0d;  /* or any dark color you like */
 }
 
+/* Phones: the app fills the whole screen. */
 body {
-  width: 	440px;
-  height: 930px;
-  margin: 0 auto;
-  box-sizing: border-box; 
-  border: #E09F3E 1px solid;
-  border-radius: 20px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;    /* fallback for older browsers */
+  height: 100dvh;   /* tracks the visible area as mobile browser bars show/hide */
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  overflow: hidden;         /* clips main's red background to the rounded corners */
-  padding: 0;   
+  overflow: hidden;
 }
 
 #root {
   flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
-  border-radius: 20px;
+  overflow-y: auto;  /* pages without their own scroll area (e.g. Results) can scroll */
   background-color: var(--color-reel-bgRed);
+}
+
+/* Let each page shrink to the screen so its inner area scrolls and the Next button stays visible. */
+#root > * {
+  min-height: 0;
+}
+
+/* Tablets and computers: show the app as a centered phone-sized card. */
+@media (min-width: 640px) {
+  body {
+    align-items: center;
+    justify-content: center;
+    padding: 24px 0;
+  }
+
+  #root {
+    flex: none;
+    width: 440px;
+    height: min(930px, 100%);
+    border: #E09F3E 1px solid;
+    border-radius: 20px;
+    overflow-x: hidden;
+  }
 }
 
 .font-playfair {

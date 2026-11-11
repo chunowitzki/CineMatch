@@ -39,7 +39,7 @@ const Streaming = ({ selectedStreaming, setSelectedStreaming, handleNext, handle
     <div className="flex flex-1 flex-col">
         <div className="flex-1 overflow-y-auto px-6 pt-14">
             <Header handleBack={handleBack}/>
-            <h2 className="mt-3 font-serif text-[38px]/[1.05] tracking-tight text-reel-cream">
+            <h2 className="mt-3 font-serif text-[clamp(1.75rem,9vw,2.375rem)]/[1.05] tracking-tight text-reel-cream">
                 Pick a streaming service 
             </h2>
             <div className="mt-7 grid grid-cols-2 gap-3">
