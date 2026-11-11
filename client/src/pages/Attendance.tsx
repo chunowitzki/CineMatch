@@ -38,7 +38,7 @@ const Attendance = ({ selectedAttendance, setSelectedAttendance, handleNext, han
             ))}
         </div>
         </div>
-        <NextButton handleNext={handleNext}/>
+        <NextButton handleNext={handleNext} disabled={selectedAttendance.length === 0}/>
 
     </div>
   )

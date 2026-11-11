@@ -44,7 +44,7 @@ const Genres = ({ selectedGenres, setSelectedGenres, handleNext, handleBack }: G
             ))}
         </div>
         </div>
-        <NextButton handleNext={handleNext}/>
+        <NextButton handleNext={handleNext} disabled={selectedGenres.length === 0}/>
 
     </div>
   )

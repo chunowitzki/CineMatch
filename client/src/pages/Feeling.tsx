@@ -52,7 +52,7 @@ const Feeling = ({ selectedFeeling, setSelectedFeeling, handleNext, handleBack }
             ))}
         </div>
         </div>
-        <NextButton handleNext={handleNext}/>
+        <NextButton handleNext={handleNext} disabled={selectedFeeling.length === 0}/>
 
     </div>
   )

@@ -48,7 +48,7 @@ const Streaming = ({ selectedStreaming, setSelectedStreaming, handleNext, handle
                 ))}
             </div>
         </div>
-        <NextButton handleNext={handleNext}/>
+        <NextButton handleNext={handleNext} disabled={selectedStreaming.length === 0}/>
 
     </div>
   )
