@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-app.use(cors({ origin: 'http://localhost:5173' }));
+app.use(cors({ origin: [ 'http://localhost:5173', process.env.FRONTEND_URL ] }));
 app.use(express.json());
 
 const openai = new OpenAI({
