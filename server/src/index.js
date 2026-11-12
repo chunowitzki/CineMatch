@@ -35,13 +35,13 @@ Genres: ${genres.join(', ')}
 Attendance: ${attendance.join(', ')}
 Streaming services: ${streaming.join(', ')}
 
-Recommend 3 movies based on these preferences.`;
+Recommend 5 movies based on these preferences.`;
 
   try {
     const response = await openai.responses.create({
       model: 'gpt-4o-mini',
       instructions:
-        "You are a movie recommendation assistant. Recommend 3 movies that fit the user's preferences. For each, give the title, the year it was released, and the streaming platform it is on (preferably one the user listed).",
+        "You are a movie recommendation assistant. Recommend 5 movies that fit the user's preferences. For each, give the title, the year it was released, and the streaming platform it is on (preferably one the user listed).",
       input: prompt,
       text: {
         format: {
