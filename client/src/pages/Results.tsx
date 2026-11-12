@@ -44,7 +44,7 @@ export default function Results({ recommendations, loading, error, setSelectedSt
 
   }
   return (
-    <div className={`flex flex-1 flex-col transition-colors duration-500 ${liked ? "bg-reel-gold/90" : ""}`}>
+    <div className={`flex flex-1 flex-col flex- h-dvh transition-colors duration-500 ${liked ? "bg-reel-gold/90" : ""}`}>
       <header className="mx-auto mb-8 flex w-full flex-col items-center gap-3 pt-8 text-center">
       {liked ? (
         <>
