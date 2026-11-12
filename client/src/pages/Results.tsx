@@ -101,7 +101,7 @@ export default function Results({ recommendations, loading, error, setSelectedSt
           </div>
       )}
 
-       <div className="mt-10 flex w-full justify-center pb-8">
+       <div className={`mt-10 flex w-full justify-center pb-8 ${liked ? "bg-reel-gold/90" : ""}`}>
   <Link
     to="/"
     onClick={handleStartOver}
